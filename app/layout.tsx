@@ -18,10 +18,10 @@ const spaceGrotesk = Space_Grotesk({
 })
  
 export const metadata: Metadata = {
-  title: 'DevFlow',
-  description: 'A community-driven platform for asking and answering programming questions. Get help, share knowledge, and collaborate with developers from around the world. Explore topics in web development, mobile app development, algorithms, data structures, and more.',
+  title: 'ByteExchange',
+  description: 'A vibrant community platform where developers unite to solve coding challenges, share expertise, and grow together. Dive into discussions on web development, algorithms, mobile apps, and much more.',
   icons: {
-    icon: '/assets/images/site-logo.svg'
+    icon: '/assets/images/ziga-site-logo.svg'
   }
 }
  
