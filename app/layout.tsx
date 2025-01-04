@@ -1,10 +1,12 @@
 import React from 'react'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Inter, Space_Grotesk } from 'next/font/google'
-import type { Metadata } from 'next';
+import type { Metadata } from 'next'; // for typescripting to know we are working with metadata
 
-import './globals.css';
+import './globals.css'; // styles
 
+
+// Using fonts
 const inter = Inter({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -19,9 +21,10 @@ const spaceGrotesk = Space_Grotesk({
  
 export const metadata: Metadata = {
   title: 'ByteExchange',
-  description: 'A vibrant community platform where developers unite to solve coding challenges, share expertise, and grow together. Dive into discussions on web development, algorithms, mobile apps, and much more.',
+  description: 'A vibrant community platform where developers unite to share expertise, and grow together. Dive into discussions on web development, algorithms, mobile apps, and much more.',
   icons: {
     icon: '/assets/images/ziga-site-logo.svg'
+    // icon: './favicon.ico',
   }
 }
  
@@ -40,8 +43,11 @@ export default function RootLayout({
       }}
     >
       <html lang="en">
+        {/* Adding the classnames to the body for the fonts */}
         <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
+
           {children}
+
         </body>
       </html>
     </ClerkProvider>
