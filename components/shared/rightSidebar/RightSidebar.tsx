@@ -7,22 +7,22 @@ const RightSidebar = () => {
 
     // temporary questions before database connection
     const hotQuestions = [
-        { _id: 1, title: "What is React?", },
-        { _id: 2, title: "What is a stupid question?" },
-        { _id: 3, title: "What is google?", },
-        { _id: 4, title: "What is hola?", },
-        { _id: 5, title: "What is money?", },
+        { _id: "1", title: "What is React?", },
+        { _id: "2", title: "What is a stupid question?" },
+        { _id: "3", title: "What is google?", },
+        { _id: "4", title: "What is hola?", },
+        { _id: "5", title: "What is money?", },
     ];
 
 
     // temporary tags before connecting to db 
     const popularTags = [
-        { _id: 1, name: "react", totalQuestions: 12 },
-        { _id: 2, name: "javaScript", totalQuestions: 5 },
-        { _id: 3, name: "python", totalQuestions: 4 },
-        { _id: 4, name: "java", totalQuestions: 2 },
-        { _id: 5, name: "vue", totalQuestions: 6 },
-        { _id: 6, name: "next", totalQuestions: 10 },
+        { _id: "1", name: "react", totalQuestions: 12 },
+        { _id: "2", name: "javaScript", totalQuestions: 5 },
+        { _id: "3", name: "python", totalQuestions: 4 },
+        { _id: "4", name: "java", totalQuestions: 2 },
+        { _id: "5", name: "vue", totalQuestions: 6 },
+        { _id: "6", name: "next", totalQuestions: 10 },
     ];
 
     return (
