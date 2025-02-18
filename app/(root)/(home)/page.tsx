@@ -6,103 +6,16 @@ import LocalSearchBar from "@/components/shared/search/LocalSearchBar";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filters";
 import Link from "next/link";
+import {getQuestions} from "@/lib/actions/question.action";
 
 
-const questions = [
-  {
-    _id: '1',
-    title: 'Cascading deletes in SQLAlchemy?',
-    tags: [
-      { _id: '1', name: 'python' },
-      { _id: '2', name: 'sql' },
-      { _id: '3', name: 'database' }
-    ],
-    author: {
-      _id: 'a1',
-      name: 'John Doe',
-      picture: 'https://example.com/john_doe.jpg'
-    },
-    upvotes: 10,
-    views: 100,
-    answers: [{}, {}],
-    createdAt: new Date('2021-09-01T12:00:00.000Z')
-  },
-  {
-    _id: '2',
-    title: 'How to handle exceptions in Python?',
-    tags: [
-      { _id: '4', name: 'python' },
-      { _id: '5', name: 'error-handling' }
-    ],
-    author: {
-      _id: 'a2',
-      name: 'Jane Smith',
-      picture: 'https://example.com/jane_smith.jpg'
-    },
-    upvotes: 15,
-    views: 150,
-    answers: [{}, {}, {}],
-    createdAt: new Date('2021-09-10T15:30:00.000Z')
-  },
-  {
-    _id: '3',
-    title: 'Best practices for responsive web design?',
-    tags: [
-      { _id: '6', name: 'css' },
-      { _id: '7', name: 'web-development' },
-      { _id: '8', name: 'design' }
-    ],
-    author: {
-      _id: 'a3',
-      name: 'Alice Brown',
-      picture: 'https://example.com/alice_brown.jpg'
-    },
-    upvotes: 25,
-    views: 300,
-    answers: [{}, {}, {}, {}, {}],
-    createdAt: new Date('2021-10-05T10:15:00.000Z')
-  },
-  {
-    _id: '4',
-    title: 'What is the difference between SQL and NoSQL?',
-    tags: [
-      { _id: '9', name: 'database' },
-      { _id: '10', name: 'sql' },
-      { _id: '11', name: 'nosql' }
-    ],
-    author: {
-      _id: 'a4',
-      name: 'Chris Green',
-      picture: 'https://example.com/chris_green.jpg'
-    },
-    upvotes: 354444440,
-    views: 874440,
-    answers: [{}, {}, {}, {}],
-    createdAt: new Date('2021-11-20T08:45:00.000Z')
-  },
-  {
-    _id: '5',
-    title: 'How to optimize React application performance?',
-    tags: [
-      { _id: '12', name: 'react' },
-      { _id: '13', name: 'javascript' },
-      { _id: '14', name: 'performance' }
-    ],
-    author: {
-      _id: 'a5',
-      name: 'David White',
-      picture: 'https://example.com/david_white.jpg'
-    },
-    upvotes: 20,
-    views: 250,
-    answers: [{}, {}, {}, {}, {}, {}],
-    createdAt: new Date('2021-12-15T14:20:00.000Z')
-  }
-];
+export default async function Home() {
 
+  // grab data from the db
+  const result = await getQuestions({});
 
+  // console.log(result.questions);
 
-export default function Home() {
   return (
     <>
 
@@ -139,8 +52,8 @@ export default function Home() {
         {/* questions in the homepage */}
         {/* Loop through the questions and display a QuestionCard */}
 
-        {questions.length > 0 ?
-          questions.map((question) => (
+        {result.questions.length > 0 ?
+          result.questions.map((question) => (
             <QuestionCard 
               key={question._id}
               _id={question._id}
