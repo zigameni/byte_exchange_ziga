@@ -183,7 +183,7 @@ const Question = ({mongoUserId}:Props) => {
                                 tags <span className="text-primary-500">*</span>
                             </FormLabel>
                             <FormControl className="mt-3.5">
-                                {/* form control can recive only a single element*/}
+                                {/* form control can recive only a single element */}
                                 <>
                                 <Input
                                     className="no-focus paragraph-regular background-light900_dark300 light-border-2 text-dark300_light700 min-h-[56px] border"
