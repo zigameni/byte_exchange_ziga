@@ -1,6 +1,6 @@
 "use client"
 
-import {useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -103,7 +103,7 @@ const Question = ({mongoUserId}:Props) => {
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="flex w-full flex-col gap-10">
-                {/*TITLE FORM FIELD*/}
+                {/* TITLE FORM FIELD */}
                 <FormField
                     control={form.control}
                     name="title"
@@ -126,7 +126,7 @@ const Question = ({mongoUserId}:Props) => {
                     )}
                 />
 
-                {/*EXPLANATION FORM FIELD*/}
+                {/* EXPLANATION FORM FIELD */}
                 <FormField
                     control={form.control}
                     name="explanation"
@@ -173,7 +173,7 @@ const Question = ({mongoUserId}:Props) => {
                 />
 
 
-                {/*TAGS FORM FIELD*/}
+                {/* TAGS FORM FIELD */}
                 <FormField
                     control={form.control}
                     name="tags"
