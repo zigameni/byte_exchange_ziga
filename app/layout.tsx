@@ -6,6 +6,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import type { Metadata } from "next"; // for typescripting to know we are working with metadata
 
 import "./globals.css"; // styles
+import "../styles/prism.css"; // styles for prism
 import { ThemeProvider } from "@/context/ThemeProvider";
 
 // Using fonts
@@ -37,8 +38,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   // const [meni, setMeni] = useState(null);
-   
-   
+
+
   return (
     <html lang="en">
       {/* Adding the classnames to the body for the fonts */}

@@ -5,6 +5,8 @@ import Image from "next/image";
 import Metric from "@/components/shared/Metric";
 import { formatNumber, getTimestamp } from "@/lib/utils";
 import ParseHTML from "@/components/shared/ParseHTML";
+import RenderTag from '@/components/shared/RenderTag';
+import Answer from '@/components/forms/Answer';
 
 const Page = async ({ params }) => {
   const result = await getQuestionById({ questionId: params.id });
@@ -40,7 +42,7 @@ const Page = async ({ params }) => {
           alt="clock icon"
           value={` asked ${getTimestamp(result.createdAt)}`}
           title=" Votes"
-          textStyles="small-medium text-dark400_light800"
+          textStyles="small-medium text-dark400_light800" 
         />
         <Metric
           imgUrl="/assets/icons/message.svg"
@@ -59,6 +61,20 @@ const Page = async ({ params }) => {
       </div>
 
       <ParseHTML data={result.content} />
+      
+      <div className='mt-8 flex flex-wrap gap-2'>
+        {result.tags.map((tag) => (
+          <RenderTag 
+            key={tag._id} 
+            _id={tag._id}
+            name={tag.name}
+            showCount={false}
+          />
+        ))}
+      </div>
+      
+      <Answer />
+       
     </>
   )
 }
